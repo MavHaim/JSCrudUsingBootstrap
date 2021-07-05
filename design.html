@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Student Registration Form
+    </title>
+    <link rel="stylesheet" href="design.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="signup">
+        <h1>Student Registration Form</h1>
+        <form class="row g-3 needs-validation" onsubmit="event.preventDefault();">
+
+
+            <div class="col-md-6">
+                <label for="validationCustom01" class="form-label">First Name*</label><label
+                    class="validation-error hide" id="fnameValidationError">This
+                    field is required.</label>
+                <label class="validation-error hide1" id="fnameValidationError1">Name should be atleast 3 char and
+                    Alphabets</label>
+                <input type="text" class="form-control" name="fname" id="fname" onchange="regno()">
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom02" class="form-label">Last Name*</label><label
+                    class="validation-error hide" id="lnameValidationError">This
+                    field is required.</label>
+                <label class="validation-error hide1" id="lnameValidationError1">Name should be atleast 3 char and
+                    Alphabets</label>
+                <input type="text" class="form-control" name="lname" id="lname" onchange="regno()">
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom02" class="form-label">Phone no*</label><label class="validation-error hide"
+                    id="phonenoValidationError">This
+                    field is required.</label>
+                <label class="validation-error hide1" id="phonenoValidationError1">Phone no should be of 10
+                    digits.</label>
+                <input type="text" class="form-control" name="phoneno" id="phoneno">
+            </div>
+            <div class="col-md-6">
+                <label or="validationCustom02" class="form-label">Address*</label><label class="validation-error hide"
+                    id="addressValidationError">This
+                    field
+                    is required.</label>
+                <label class="validation-error hide1" id="addressValidationError1">Should be less than 50 characters and
+                    AlphaNumeric.</label>
+                <input type="text" class="form-control" name="address" id="address">
+            </div>
+            <div class="col-md-12">
+                <label for="inputEmail4" class="form-label">Email*</label><label class="validation-error hide"
+                    id="emailValidationError">This
+                    field
+                    is required.</label>
+                <label class="validation-error hide1" id="emailValidationError1">Follow email parameters. Need Valid
+                    Email.</label>
+                <input type="email" lass="form-control email" name="email" id="email">
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom04" class="form-label">State*</label> <label class="validation-error hide"
+                    id="stateValidationError">This field
+                    is required</label>
+                <label class="validation-error hide1" id="stateValidationError1">Select from Dropdown.</label>
+                <select class="form-select" id="state" name="state">
+                    <option selected disabled value="">Choose...</option>
+                    </option>
+
+                    <option>Andhra Pradesh(Amaravati)</option>
+                    <option>Arunachal Pradesh(Itanagar)</option>
+                    <option> Assam(Dispur)</option>
+                    <option> Bihar(Patna)</option>
+                    <option> Chhattisgarh(Raipur)</option>
+                    <option> Goa(Panaji)</option>
+                    <option> Gujarat(Gandhinagar)</option>
+                </select>
+
+            </div>
+
+            <div class="col-md-6">
+                <label for="validationCustom05" class="form-label">Zip*</label> <label class="validation-error hide"
+                    id="zipValidationError">This field
+                    is required</label>
+                <label class="validation-error hide1" id="zipValidationError1">Zip should be of 6 digits.</label>
+
+                <input type="number" class="form-control" id="zip" name="zip" min="1" max="999999">
+
+            </div>
+
+            <div class="col-md-4">
+                <label for="validationCustom04" class="form-label">Degree*</label> <label class="validation-error hide"
+                    id="degreeValidationError">This
+                    field
+                    is required</label>
+                <label class="validation-error hide1" id="degreeValidationError1">Select from Dropdown.</label>
+                <select class="form-select" id="degree" name="degree" onclick="enable()" onchange="regno()">
+                    <option selected disabled value="">Choose...</option>
+                    <option>BTech</option>
+                    <option>MTech</option>
+                    <option>MBA</option>
+                    <option>BCA</option>
+                    <option>BBA</option>
+                    <option>BCOM</option>
+                    <option>MCOM</option>
+                    <option>BArch</option>
+                    <option>BDes</option>
+                    <option>Cardio</option>
+                    <option>MBBS</option>
+                    <option>DENTAL</option>
+                    <option>BE</option>
+                </select>
+
+            </div>
+
+            <div class="col-md-4">
+                <label for="validationCustom04">Sem*</label> <label class="validation-error hide"
+                    id="semValidationError">This field
+                    is required</label>
+                <label class="validation-error hide1" id="semValidationError1">Select from dropdown.</label>
+                <select class="form-select" name="sem" id="sem" onclick="enable()" onchange="regno()">
+                    <option selected disabled value="">Choose...</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                </select>
+
+            </div>
+            <div class="col-md-4">
+                <label for="validationCustom04" class="form-label">Course*</label> <label class="validation-error hide"
+                    id="courseValidationError">This
+                    field
+                    is required</label>
+                <label class="validation-error hide1" id="courseValidationError1">Select from dropdown.</label>
+                <select class="form-select" id="course" name="course">
+                    <option selected disabled value="">Choose...</option>
+                    <option>AI</option>
+                    <option>DL</option>
+                    <option>ML</option>
+                    <option>WEB DEV</option>
+                    <option>ROBOTICS</option>
+                    <option>BUSS ANAY</option>
+                    <option>DBMS</option>
+                    <option>OS</option>
+                    <option>CL</option>
+
+                </select>
+
+            </div>
+
+            <div lass="col-md-4" class="form-action-buttons">
+                <input type="text" id="registration" readonly>
+            </div>
+
+            <div class="col-12" class="form-action-buttons">
+                <input id="submitbtn" type="submit" value="Submit" onclick="regno()" >
+            </div>
+
+
+        </form>
+        <td class=outertable>
+            <h1>Students List</h1>
+            <table class="list" id="studentList">
+                <thead>
+                    <tr class=outerrow>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>PhoneNo</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>State</th>
+                        <th>Zip</th>
+                        <th>Degree</th>
+                        <th>Semester</th>
+                        <th>Course</th>
+                        <th>Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </td>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
